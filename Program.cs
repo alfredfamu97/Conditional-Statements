@@ -77,8 +77,9 @@ namespace Conditional_Statements
 
                 }
                 else if ((numerical_grade > 69) && (numerical_grade < 72))
-                { Console.WriteLine("Your Grade Is A C-"); 
-                
+                {
+                    Console.WriteLine("Your Grade Is A C-");
+
                 }
                 else if ((numerical_grade > 67) && (numerical_grade < 70))
                 {
@@ -93,16 +94,18 @@ namespace Conditional_Statements
                     Console.WriteLine("Your Grade Is A D-");
                 }
                 else if ((numerical_grade > 0) && (numerical_grade < 60))
-                { 
+                {
                     Console.WriteLine("Your Grade Is A F");
                 }
-                    
 
 
             }
-            catch { }
+
+            catch
+            {
+                Console.WriteLine("Please enter a value between 0 and 100");
             }
-            }
+        }
     }
-
+}
 
