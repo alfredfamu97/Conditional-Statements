@@ -78,13 +78,13 @@ namespace Conditional_Statements
                 {
                     Console.WriteLine("Your Grade Is A D");
                 }
-                else if ((numerical_grade > 59) && (numerical_grade < 62))
+                else if ((numerical_grade > 59) && (numerical_grade <= 61))
                 {
                     Console.WriteLine("Your Grade Is A D-");
                 }
-                else if ((numerical_grade < 0) && (numerical_grade < 62))
+                else if ((numerical_grade > 0) && (numerical_grade < 60))
                 { 
-                    Console.WriteLine("Your Grade Is A F"); 
+                    Console.WriteLine("Your Grade Is A F");
                 }
                     
 
