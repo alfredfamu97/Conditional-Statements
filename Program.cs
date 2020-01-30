@@ -16,94 +16,77 @@ namespace Conditional_Statements
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("What Grade Do You Expect To Get In ISM 4300...");
-            /* Use the try catch block to validate user input.
-             * If the user provides bad input, the catch block will handle the error and a message will be displayed.
-             */
+            // Notify user of correct input.
+            Console.WriteLine("What is your expected grade for course ISM 4300?");
+            Console.WriteLine();
+
             try
             {
+                // Variable.
+                int grade = int.Parse(Console.ReadLine());
 
-                // This variable will gather the user input
-                string input = Console.ReadLine();
-
-                /*  This variable will be used to store grade values
-                 *  after the input variable is parsed to decimal
-                 */
-                decimal numerical_grade = decimal.Parse(input);
-
-                // This variable will be used to get the number of years user has been in sales
-
-                int letter_grade = 0;
-
-                /*   This IF/ELSE IF/ELSE statement is used to conditionally
-                     test the users input. Various options are available
-                     depending on the amount entered by the user. Then, insde of each IF/ELSE IF/ELSE
-                     there is a switch conditional statement that displays a message depending
-                     on the number of years experience in sales entered by the user. 
-                    */
-
-                if (numerical_grade > 97)
+                // Show error message if user input > 100
+                if ((grade > 100))
                 {
-                    Console.WriteLine("Your Grade Is An A+");
-                    letter_grade = int.Parse(Console.ReadLine());
-                }
-                else if ((numerical_grade > 91) && (numerical_grade < 98))
-                {
-                    Console.WriteLine("Your Grade Is An A");
-                }
-                else if ((numerical_grade > 89) && (numerical_grade < 92))
-                {
-                    Console.WriteLine("Your Grade Is An A-");
+                    Console.WriteLine("Exceeded Grade limit and needs to be below 100");
                 }
 
-                else if ((numerical_grade > 87) && (numerical_grade < 90))
+                // If grade between 98 and 100 the grade will be an A+.
+                else if ((grade >= 98) && (grade <= 100))
                 {
-                    Console.WriteLine("Your Grade Is A B+");
+                    Console.WriteLine("Letter grade of A+");
                 }
-
-                else if ((numerical_grade > 81) && (numerical_grade < 88))
+                // Otherwise, if grade between 92 and 97 the grade will be an A.
+                else if ((grade >= 92) && (grade <= 97))
                 {
-                    Console.WriteLine("Your Grade Is A B");
-
+                    Console.WriteLine("Letter grade of A");
                 }
-                else if ((numerical_grade > 77) && (numerical_grade < 80))
+                // Otherwise, if grade between 90 and 91 the grade will be an A-.
+                else if ((grade >= 90) && (grade <= 91))
                 {
-                    Console.WriteLine("Your Grade Is A C+");
-
+                    Console.WriteLine("Letter grade of A-");
                 }
-                else if ((numerical_grade > 71) && (numerical_grade < 78))
+                // Otherwise, if grade between 92 and 97 the grade will be a B+.
+                else if ((grade >= 88) && (grade <= 89))
                 {
-                    Console.WriteLine("Your Grade Is A C");
-
+                    Console.WriteLine("Letter grade of B+");
                 }
-                else if ((numerical_grade > 69) && (numerical_grade < 72))
+                // Otherwise, if grade between 82 and 87 the grade will be a B.
+                else if ((grade >= 82) && (grade <= 87))
                 {
-                    Console.WriteLine("Your Grade Is A C-");
-
+                    Console.WriteLine("Letter grade of B");
                 }
-                else if ((numerical_grade > 67) && (numerical_grade < 70))
+                // Otherwise, if grade between 80 and 81 the grade will be an B-.
+                else if ((grade >= 80) && (grade <= 81))
                 {
-                    Console.WriteLine("Your Grade Is A D+");
+                    Console.WriteLine("Letter grade of B-");
                 }
-                else if ((numerical_grade > 61) && (numerical_grade < 68))
+                // Otherwise, if grade between 78 and 79 the grade will be an C+.
+                else if ((grade >= 78) && (grade <= 79))
                 {
-                    Console.WriteLine("Your Grade Is A D");
+                    Console.WriteLine("Letter grade of C+");
                 }
-                else if ((numerical_grade > 59) && (numerical_grade <= 61))
+                // Otherwise, if grade between 72 and 77 the grade will be an C.
+                else if ((grade >= 72) && (grade <= 77))
                 {
-                    Console.WriteLine("Your Grade Is A D-");
+                    Console.WriteLine("Letter grade of C");
                 }
-                else if ((numerical_grade > 0) && (numerical_grade < 60))
+                // Otherwise, if grade between 70 and 71 the grade will be an C-.
+                else if ((grade >= 70) && (grade <= 71))
                 {
-                    Console.WriteLine("Your Grade Is A F");
+                    Console.WriteLine("Letter grade of C-");
                 }
-
-
+                // Otherwise, if grade below a 70, notify the user is failing.
+                else if ((grade < 70))
+                {
+                    Console.WriteLine("Student has failed.");
+                }
             }
-
+            // Show user about the acceptable range and how to exit
             catch
             {
-                Console.WriteLine("Please enter a value between 0 and 100");
+                Console.WriteLine("The values must not be less than 0 and not exceed 100");
+                Console.WriteLine("Press ESC to exit");
             }
         }
     }
